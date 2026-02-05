@@ -1,0 +1,72 @@
+Metadata-Version: 2.4
+Name: todo-app
+Version: 0.1.0
+Summary: A command-line todo application with in-memory storage
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+
+# Todo App
+
+A command-line todo application with in-memory storage, built using Python.
+
+## Features
+
+- Add todo items with title and description
+- List all todo items with status indicators
+- Update existing todo items
+- Delete todo items by ID
+- Mark items as complete/incomplete
+- All data stored in memory only (no persistence)
+
+## Prerequisites
+
+- Python 3.13+
+- UV package manager
+
+## Setup
+
+1. Clone the repository
+2. Navigate to the project directory
+3. Install dependencies using UV: `uv sync`
+
+## Usage
+
+### Add a new todo:
+```bash
+python src/cli/main.py add --title "My Task" --description "Task details"
+```
+
+### List all todos:
+```bash
+python src/cli/main.py list
+```
+
+### Update a todo:
+```bash
+python src/cli/main.py update --id 1 --title "New Title"
+```
+
+### Mark complete:
+```bash
+python src/cli/main.py complete --id 1
+```
+
+### Mark incomplete:
+```bash
+python src/cli/main.py incomplete --id 1
+```
+
+### Delete a todo:
+```bash
+python src/cli/main.py delete --id 1
+```
+
+## Architecture
+
+- **Models**: Handle data representation (`TodoItem`)
+- **Services**: Handle business logic (`TodoService`)
+- **CLI**: Handle user interaction (`main.py`)
+
+## Development
+
+All code follows clean architecture principles with separation of concerns between models, services, and CLI. In-memory storage only as required by specification.
